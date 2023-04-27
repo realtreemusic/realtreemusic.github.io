@@ -17,24 +17,19 @@
     <!-- Polyfill 지원하지 않는 이전 브라우저에서 최신 코드를 지원 가능하도록 변환 -->
     <script src=https://cdn.jsdelivr.net/npm/promise-polyfill@8.1/dist/polyfill.min.js></script>
 
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#footer").load("footer.html")
+            $("header").load("header.html")
+        });
+    </script>
 
 </head>
 
 <body>
     <div id="app">
-        <header class="light_wrapper">
-            <div id="content_header">
-                <a href="/index.html"><img src="/imgs/logo_top.png"></a>
-                <ul>
-                    <li><a href="realtree.html">리얼트리</a></li>
-                    <li><a href="location.html">수업장소</a></li>
-                    <li><a href="teacher.html">선생님영상</a></li>
-                    <li><a href="event.html">이벤트</a></li>
-                    <li><a href="schedule.html">수업일정</a></li>
-                    <li><a href="contact.html">문의/신청</a></li>
-                </ul>
-            </div>
-        </header>
+        <header class="light_wrapper"></header>
 
         <section class="light_wrapper">
             <div style="padding-top: 50px; width: var(--width-content);">
@@ -87,33 +82,7 @@
             </div>
         </section>
 
-        <footer>
-            <div id="footer_wrapper" class="flex_row">
-                <!-- <p class="text_subtitle">고객센터</p>
-            <p class="text_small">
-                상호명: 리얼트리뮤직<br>
-                대표자명: 김혜인<br>
-                사업자 주소: 서울시 강남구 테헤란로 1길 10. 세경빌딩(역삼동)<br>
-                사업자등록번호: 185-47-00344<br>
-                이메일: truenamu01@naver.com
-            </p> -->
-
-                <div class="footer_item" style="flex: 3;">
-                    <img src="/imgs/logo_bottom.png"><br>
-                    상호명: 리얼트리뮤직<br>
-                    대표자명: 김혜인<br>
-                    사업자등록번호: 185-47-00344
-                </div>
-                <div class="footer_item" style="flex: 1.5;">
-                    <p class="text_subtitle" style="margin-bottom: 20px">고객센터</p>
-                    10, Teheran-ro 1-gil, Gangnam-gu, Seoul<br>
-                    truenamu01@naver.com<br>
-                    +82 1026789690
-                </div>
-
-            </div>
-
-        </footer>
+        <footer id="footer"></footer>
 
     </div>
 

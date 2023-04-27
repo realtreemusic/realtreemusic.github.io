@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>REALTREE MUSIC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="index.css">
+
+</head>
+
+<body>
+    <div id="content_header">
+        <a href="/index.html"><img src="/imgs/logo_top.png"></a>
+        <ul>
+            <li id="realtree"><a href="realtree.html">리얼트리</a></li>
+            <li id="location"><a href="location.html">수업장소</a></li>
+            <li id="teacher"><a href="teacher.html">선생님영상</a></li>
+            <li id="event"><a href="event.html">이벤트</a></li>
+            <li id="schedule"><a href="schedule.html">수업일정</a></li>
+            <!-- <li><a href="contact.html">문의/신청</a></li> -->
+        </ul>
+    </div>
+    <button id="btn_kakao">카카오톡<br>문의하기</button>
+</body>
+
+<script>
+    var link =  document.location.href;
+
+    if (link.includes("realtree")) {
+        $("#realtree").css("border-bottom", "1px solid #505050")
+    }
+    if (link.includes("location")) {
+        $("#location").css("border-bottom", "1px solid #505050")
+    }
+    if (link.includes("teacher")) {
+        $("#teacher").css("border-bottom", "1px solid #505050")
+    }
+    if (link.includes("event")) {
+        $("#event").css("border-bottom", "1px solid #505050")
+    }
+    if (link.includes("schedule")) {
+        $("#schedule").css("border-bottom", "1px solid #505050")
+    }
+</script>
+
+</html>

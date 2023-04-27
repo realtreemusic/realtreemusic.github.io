@@ -11,6 +11,7 @@
     --color-light: #EEEBDA;
     /* --color-gray: #BDBAAB; */
     --color-gray: #9f9a83;
+    --color-darkgray: #505050;
     
     --color-white: #FBFAF5;
     --color-black: #575550;
@@ -19,6 +20,8 @@
     --color-text-white: #FBFAF5;
 
     --color-btn-yellow: #FFC557;
+    --color-btn-lightyellow: #fff7d2;
+    --color-btn-lightyellow-text: #9f9a83;
     --color-btn-text: #67655D;
     --color-btn-off-border: #7F7D70;
     --color-btn-on: #817C66;
@@ -52,7 +55,7 @@ a,
 a:link,
 a:visited,
 a:hover {
-    color: var(--color-text-main);
+    color: var(--color-darkgray);
     text-decoration: none;
 }
 
@@ -77,6 +80,7 @@ p {
 
 .main_img_wrapper:after {
     background-image: url(imgs/img_009.jpeg);
+    background-size: cover;
     content: "";
     display: block;
     position: absolute;
@@ -84,7 +88,7 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    opacity : 0.4;
+    opacity : 0.8;
     /* filter: grayscale(90%); */
     z-index: -1;
 }
@@ -92,7 +96,7 @@ p {
 .blank_wrapper {
     display: flex;
     justify-content: center;
-    color: var(--color-text-main);
+    color: var(--color-darkgray);
 }
 
 
@@ -125,6 +129,16 @@ p {
     padding: 0px 20px;
     cursor: pointer;
     color: var(--color-btn-text);
+}
+
+.btn_lightyellow {
+    border-radius: 5px;
+    background-color: var(--color-btn-lightyellow);
+    border: none;
+    height: var(--height-btn);
+    padding: 0px 15px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 .btn_olive {
@@ -264,8 +278,9 @@ header {
 }
 
 #content_header ul li {
-    width: var(--width-header-tab);
+    margin-left: 20px;
     text-align: center;
+    font-weight: bold;
     font-size: var(--size-font-small);
 }
 
@@ -413,4 +428,20 @@ hr {
     background: var(--color-text-main);
     height: 1px;
     border: 0;
+}
+
+#btn_kakao {
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    border: none;
+    line-height: 14px;
+    font-size: 12px;
+    font-weight: bold;
+    background: var(--color-btn-yellow);
+    color: var(--color-btn-text);
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+
 }
