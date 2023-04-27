@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>REALTREE MUSIC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="https://kit.fontawesome.com/ab44e6eeed.js" crossorigin="anonymous"></script>
+
+
+    <!-- swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- Polyfill 지원하지 않는 이전 브라우저에서 최신 코드를 지원 가능하도록 변환 -->
+    <script src=https://cdn.jsdelivr.net/npm/promise-polyfill@8.1/dist/polyfill.min.js></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#footer").load("footer.html")
+            $("header").load("header.html")
+        });
+    </script>
+
+</head>
+
+<body>
+    <div id="app">
+        <header class="white_wrapper">
+        </header>
+
+        <section style="background: #ECEADD; display: flex; justify-content: center; position: relative; overflow: hidden">
+            <img src="/imgs/sub_banner.jpg">
+            <p class="title_location" style="position: absolute; width: var(--width-content); padding-left: 30px;padding-top: 45px;">| 피아노레슨</p>
+        </section>
+
+        <section class="white_wrapper">
+            <div style="padding-top: 50px; width: var(--width-content);">
+                
+                <div class="video-container" style="margin-bottom: 50px;">
+                    <iframe src="https://www.youtube.com/embed/u5Xft--J9BQ" frameborder="0" allowfullscreen=""></iframe>
+                </div>
+
+            </div>
+        </section>
+
+        <footer id="footer"></footer>
+
+    </div>
+
+</body>
+
+</html>
+
+
+<style>
+    
+
+    .video-container {
+        position: relative;
+        height: 0;
+        padding-bottom: 56.25%;
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+</style>

@@ -1,5 +1,11 @@
 @import url('https://webfontworld.github.io/naver/MaruBuri.css');
 
+@font-face {
+    font-family: "GaRamYeonGgoc";
+    src: url("font/Nanum_GaRamYeonGgoc.ttf") format("truetype");
+    font-weight: normal;
+  }
+
 /* 공통부 */
 :root {
     --width-content: 800px;
@@ -13,7 +19,7 @@
     --color-gray: #9f9a83;
     --color-darkgray: #505050;
     
-    --color-white: #FBFAF5;
+    --color-white: #f7f5eb;
     --color-black: #575550;
 
     --color-text-main: #95928B;
@@ -76,26 +82,28 @@ p {
 
 .main_img_wrapper {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .main_img_wrapper:after {
-    background-image: url(imgs/img_009.jpeg);
+    background-image: url(imgs/main_img.jpeg);
     background-size: cover;
     content: "";
-    display: block;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    opacity : 0.8;
+    /* opacity : 0.8; */
     /* filter: grayscale(90%); */
     z-index: -1;
 }
 
 .blank_wrapper {
+    width: var(--width-content);
     display: flex;
-    justify-content: center;
     color: var(--color-darkgray);
 }
 
@@ -118,7 +126,8 @@ p {
     background-color: var(--color-white);
     display: flex;
     justify-content: center;
-    color: var(--color-text-main);
+    /* color: var(--color-text-main); */
+    color: var(--color-darkgray);
 }
 
 .btn_yellow {
@@ -136,7 +145,7 @@ p {
     background-color: var(--color-btn-lightyellow);
     border: none;
     height: var(--height-btn);
-    padding: 0px 15px;
+    width: 150px;
     cursor: pointer;
     font-weight: bold;
 }
@@ -289,8 +298,9 @@ header {
 /* 메인 컨텐츠 */
 
 #content_main {
-    padding: 130px 0px;
-    width: var(--width-content);
+    margin: 130px 0px;
+    padding: 50px;
+    background-color: white;
 }
 
 
@@ -443,5 +453,6 @@ hr {
     position: fixed;
     bottom: 50px;
     right: 50px;
+    z-index: 100;
 
 }

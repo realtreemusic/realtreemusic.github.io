@@ -17,6 +17,10 @@
     <!-- Polyfill 지원하지 않는 이전 브라우저에서 최신 코드를 지원 가능하도록 변환 -->
     <script src=https://cdn.jsdelivr.net/npm/promise-polyfill@8.1/dist/polyfill.min.js></script>
 
+    <script type="text/javascript"
+        src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=k9y96tgmqe"></script>
+
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
         $(document).ready(function () {
@@ -29,25 +33,34 @@
 
 <body>
     <div id="app">
-        <header class="light_wrapper"></header>
+        <header class="white_wrapper"></header>
 
-        <section class="light_wrapper">
+        <section style="background: #ECEADD; display: flex; justify-content: center; position: relative; overflow: hidden">
+            <img src="/imgs/sub_banner.jpg">
+            <p class="title_location"
+                style="position: absolute; width: var(--width-content); padding-left: 30px; padding-top: 45px;">| 수업장소
+            </p>
+        </section>
+
+        <section class="white_wrapper">
             <div style="padding-top: 50px; width: var(--width-content);">
-                <p class="title_location flex_row" style="background-color: #e7e5da; padding: 30px 20px"><!-- <img src="/imgs/ic_logo.png"> -->| 수업장소</p>
                 <button class="btn_off" style="margin-bottom: 5px">전국 ></button>
                 <p class="text_small" style="margin-bottom: 30px">※ 온라인 레슨, 오고 가는 불편함없이 편하게 집에서</p>
                 <div class="flex_row" style="margin-bottom: 5px;">
-                    <button v-on:click="location='강남'" class="btn_off" :class="{ btn_on: location=='강남' }"
+                    <button @click="location='강남';" class="btn_off" :class="{ btn_on: location=='강남' }"
                         style="margin-right: 30px;">강남 ></button>
-                    <button v-on:click="location='과천'" class="btn_off" :class="{ btn_on: location=='과천' }"
+                    <button @click="location='과천';" class="btn_off" :class="{ btn_on: location=='과천' }"
                         style="margin-right: 30px;">과천 ></button>
-                    <button v-on:click="location='여의도'" class="btn_off" :class="{ btn_on: location=='여의도' }">여의도
+                    <button @click="location='여의도';" class="btn_off" :class="{ btn_on: location=='여의도' }">여의도
                         ></button>
                 </div>
 
-                <p v-if="location=='강남'" class="text_small" style="margin-bottom: 35px;">* 강남역점 주소: 서울 서초구 사임당로 181 2층 201호</p>
-                <p v-if="location=='과천'" class="text_small" style="margin-bottom: 35px;">* 과천점 주소: 경기 과천시 관문로 92 101동 3층 323호</p>
-                <p v-if="location=='여의도'" class="text_small" style="margin-bottom: 35px;">* 여의도점 주소: 서울특별시 영등포구 국제금융로 86 롯데 캐슬 아이비 2층 201호</p>                
+                <p v-if="location=='강남'" class="text_small" style="margin-bottom: 35px;">* 강남역점 주소: 서울 서초구 사임당로 181 2층
+                    201호</p>
+                <p v-if="location=='과천'" class="text_small" style="margin-bottom: 35px;">* 과천점 주소: 경기 과천시 관문로 92 101동 3층
+                    323호</p>
+                <p v-if="location=='여의도'" class="text_small" style="margin-bottom: 35px;">* 여의도점 주소: 서울특별시 영등포구 국제금융로 86
+                    롯데 캐슬 아이비 2층 201호</p>
                 <div style="border: 1px solid #B1AEA7; padding: 50px; margin-bottom: 50px;">
                     <div>
                         <!-- slides-per-view="3" slides-per-group="3" space-between="15" -->
@@ -74,6 +87,24 @@
                             <swiper-slide v-if="location=='여의도'"><img src="/imgs/location/yyd/2.jpg"></swiper-slide>
 
                         </swiper-container>
+
+                        <div class="flex_row" style="margin-top: 15px;">
+                            <div id="map" style="flex: 1; height: 320px; margin-right: 15px;"></div>
+
+                            <div class="flex_column" style="flex: 1">
+                                <p class="info_title">주소</p>
+                                <p class="info_content">{{ address }}</p>
+                                <p class="info_title">연락처</p>
+                                <p class="info_content">연락처</p>
+                                <p class="info_title">카카오톡 ID</p>
+                                <p class="info_content">오픈시간</p>
+                                <p class="info_title">레슨</p>
+                                <p class="info_content">주소</p>
+                                <p class="info_title">서비스</p>
+                                <p class="info_content">주소</p>
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>
@@ -91,19 +122,80 @@
 <script>
 
 
+
     new Vue({
         el: '#app',
-        components: {
-
+        watch: {
+            location(newValue) {
+                let jsScript = document.createElement('script');
+                if (newValue == "강남") {
+                    this.address = "서울 서초구 사임당로 181 2층 201호";
+                    moveToKn();
+                }
+                if (newValue == "과천") {
+                    this.address = "경기 과천시 관문로 92 101동 3층 323호";
+                    moveToKc();
+                }
+                if (newValue == "여의도") {
+                    this.address = "서울특별시 영등포구 국제금융로 86 롯데 캐슬 아이비 2층 201호";
+                    moveToYyd();
+                }
+            }
         },
-
         data: {
-            location: "강남"
+            location: "강남",
+            address: "서울 서초구 사임당로 181 2층 201호",
         },
         created: function () {
-            // ...
         },
     });
+
+    var knLocation = new naver.maps.LatLng(37.4930411, 127.0293232);
+    var kcLocation = new naver.maps.LatLng(37.4297542, 126.9904025);
+    var yydLocation = new naver.maps.LatLng(37.5198747, 126.9320775);
+
+    var map = new naver.maps.Map('map', { center: knLocation, zoom: 15 });
+    var marker = new naver.maps.Marker({
+        position: knLocation,
+        title: '위치',
+        map: map
+    });
+
+    function moveToKn() {
+        map.setCenter(knLocation);
+        map.setZoom(15, true);
+        marker.setMap(null);
+        marker = new naver.maps.Marker({
+            position: knLocation,
+            title: '위치',
+            map: map
+        });
+    }
+
+    function moveToKc() {
+        map.setCenter(kcLocation, 15);
+        map.setZoom(15, true);
+        marker.setMap(null);
+        marker = new naver.maps.Marker({
+            position: kcLocation,
+            title: '위치',
+            map: map
+        });
+    }
+
+    function moveToYyd() {
+        map.setCenter(yydLocation, 15);
+        map.setZoom(15, true);
+        marker.setMap(null);
+        marker = new naver.maps.Marker({
+            position: yydLocation,
+            title: '위치',
+            map: map
+        });
+    }
+
+
+
 </script>
 
 </html>
@@ -139,5 +231,16 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+    }
+
+    .info_title {
+        font-weight: bold;
+        line-height: 25px;
+    }
+
+    .info_content {
+        margin-bottom: 15px;
+        line-height: 25px;
+        font-size: 14px;
     }
 </style>

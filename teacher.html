@@ -30,11 +30,15 @@
 
 <body>
     <div id="app">
-        <header class="light_wrapper"></header>
+        <header class="white_wrapper"></header>
 
-        <section class="light_wrapper">
+        <section style="background: #ECEADD; display: flex; justify-content: center; position: relative; overflow: hidden">
+            <img src="/imgs/sub_banner.jpg">
+            <p class="title_location" style="position: absolute; width: var(--width-content); padding-left: 30px;padding-top: 45px;">| 선생님영상</p>
+        </section>
+
+        <section class="white_wrapper">
             <div style="padding-top: 50px; width: var(--width-content);">
-                <p class="title_location flex_row"><img src="/imgs/ic_logo.png"> | 선생님영상</p>
                 <div class="flex_row" style="margin-bottom: 35px;">
                     <button v-on:click="location='강남'" class="btn_off" :class="{ btn_on: location=='강남' }"
                         style="margin-right: 30px;">강남 ></button>

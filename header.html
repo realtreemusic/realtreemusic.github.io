@@ -10,9 +10,11 @@
 
 <body>
     <div id="content_header">
-        <a href="/index.html"><img src="/imgs/logo_top.png"></a>
+        <a href="/index.html"><img src="/imgs/logo_top2.png"></a>
         <ul>
             <li id="realtree"><a href="realtree.html">리얼트리</a></li>
+            <li id="lesson"><a href="lesson.html">피아노레슨</a></li>
+            
             <li id="location"><a href="location.html">수업장소</a></li>
             <li id="teacher"><a href="teacher.html">선생님영상</a></li>
             <li id="event"><a href="event.html">이벤트</a></li>
@@ -29,6 +31,10 @@
     if (link.includes("realtree")) {
         $("#realtree").css("border-bottom", "1px solid #505050")
     }
+    if (link.includes("lesson")) {
+        $("#lesson").css("border-bottom", "1px solid #505050")
+    }
+    
     if (link.includes("location")) {
         $("#location").css("border-bottom", "1px solid #505050")
     }
