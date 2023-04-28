@@ -32,17 +32,16 @@
         <header class="white_wrapper">
         </header>
 
-        <section style="background: #ECEADD; display: flex; justify-content: center; position: relative; overflow: hidden">
+        <section class="sub_banner">
             <img src="/imgs/sub_banner.jpg">
-            <p class="title_location"
-                style="position: absolute; width: var(--width-content); padding-left: 30px;padding-top: 45px;">| 이벤트</p>
+            <p class="title_location">| 이벤트</p>
         </section>
 
         <section class="white_wrapper">
 
 
 
-            <div style="padding-top: 50px; width: var(--width-content);">
+            <div class="location_wrapper">
 
                 <div class="flex_row" style="margin-bottom: 30px; border-bottom: 1px solid #DBD7CB">
                     <button @click="tab=0" class="tab_off" :class="{ tab_on: tab==0 }">4주,1곡 완성</button>
@@ -146,42 +145,3 @@
 </script>
 
 </html>
-
-
-<style>
-    .title_location {
-        font-weight: 900;
-        font-size: var(--size-font-subtitle);
-        align-items: center;
-        margin-bottom: 70px;
-    }
-
-    .title_location img {
-        height: 40px;
-        margin-right: 15px;
-    }
-
-    .tab_on {
-        border-bottom: 1px solid #95928B !important
-    }
-
-    .tab_off {
-        border: none;
-        height: 50px;
-        background-color: transparent;
-        padding: 0px 15px;
-    }
-
-    .curriculum {
-        list-style: square;
-    }
-    .curriculum li {
-        margin-bottom: 15px;
-        font-size: 14px;
-        line-height: 20px;
-    }
-
-    .c_title {
-        font-weight: bold;
-    }
-</style>
