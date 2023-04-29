@@ -44,8 +44,8 @@
         <section class="white_wrapper">
             <div class="location_wrapper">
                 <button class="btn_off" style="margin-bottom: 5px">전국 ></button>
-                <p class="text_small" style="margin-bottom: 30px">※ 온라인 레슨, 오고 가는 불편함없이 편하게 집에서</p>
-                <div class="flex_row" style="margin-bottom: 5px;">
+                <p class="text_small" style="margin-bottom: 30px; letter-spacing: 0.1px;">※ 온라인 레슨, 오고 가는 불편함없이 편하게 집에서</p>
+                <div class="flex_row" style="margin-bottom: 10px;">
                     <button @click="location='강남';" class="btn_off" :class="{ btn_on: location=='강남' }"
                         style="margin-right: 30px;">강남 ></button>
                     <button @click="location='과천';" class="btn_off" :class="{ btn_on: location=='과천' }"
@@ -54,19 +54,13 @@
                         ></button>
                 </div>
 
-                <p v-if="location=='강남'" class="text_small" style="margin-bottom: 35px;">* 강남역점 주소: 서울 서초구 사임당로 181 2층
-                    201호</p>
-                <p v-if="location=='과천'" class="text_small" style="margin-bottom: 35px;">* 과천점 주소: 경기 과천시 관문로 92 101동 3층
-                    323호</p>
-                <p v-if="location=='여의도'" class="text_small" style="margin-bottom: 35px;">* 여의도점 주소: 서울특별시 영등포구 국제금융로 86
-                    롯데 캐슬 아이비 2층 201호</p>
-                <div style="border: 1px solid #B1AEA7; padding: 50px; margin-bottom: 50px;">
+                <div id="map_wrapper">
                     <div>
                         <!-- slides-per-view="3" slides-per-group="3" space-between="15" -->
                         <swiper-container class="mySwiper1" navigation="true" pagination="true"
                             pagination-dynamic-bullets="true">
                             <swiper-slide v-if="location=='강남'"><img src="/imgs/location/kn/1.png"></swiper-slide>
-                            <swiper-slide v-if="location=='강남'"><img src="/imgs/location/kn/2.jpg"></swiper-slide>
+                            <!-- <swiper-slide v-if="location=='강남'"><img src="/imgs/location/kn/2.jpg"></swiper-slide> -->
                             <swiper-slide v-if="location=='강남'"><img src="/imgs/location/kn/3.jpg"></swiper-slide>
                             <swiper-slide v-if="location=='강남'"><img src="/imgs/location/kn/4.jpg"></swiper-slide>
                             <swiper-slide v-if="location=='강남'"><img src="/imgs/location/kn/5.jpg"></swiper-slide>
@@ -87,7 +81,7 @@
 
                         </swiper-container>
 
-                        <div class="flex_row" style="margin-top: 15px;">
+                        <div id="map_detail" style="margin-top: 20px;">
                             <div id="map" style="flex: 1; height: 320px; margin-right: 15px;"></div>
 
                             <div class="flex_column" style="flex: 1">

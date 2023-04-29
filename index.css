@@ -122,6 +122,7 @@ p {
 .gray_wrapper {
     background-color: var(--color-gray);
     display: flex;
+    padding: 8px;
     justify-content: center;
     color: var(--color-text-white);
 }
@@ -141,6 +142,8 @@ p {
     height: var(--height-btn);
     padding: 0px 20px;
     cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
     color: var(--color-btn-text);
 }
 
@@ -150,8 +153,10 @@ p {
     border: none;
     height: var(--height-btn);
     width: 150px;
+    font-size: 14px;
     cursor: pointer;
     font-weight: bold;
+    color: var(--color-btn-text);
 }
 
 .btn_olive {
@@ -161,6 +166,8 @@ p {
     height: var(--height-btn);
     padding: 0px 20px;
     cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
     color: var(--color-btn-olive-text);
 }
 
@@ -192,7 +199,7 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 50px 0px 30px 0px;
+    margin: 16px 0px 0px 0px;
 }
 
 .row_imgs div {
@@ -242,7 +249,7 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 50px 0px 30px 0px;
+    margin: 16px 0px 0px 0px;
 }
 
 .row_divs div {
@@ -289,6 +296,13 @@ header {
     flex-direction: row;
     list-style: none;
 
+}
+
+.content_sub_title {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-top: 20px
 }
 
 #content_header ul li {
@@ -638,6 +652,17 @@ swiper-slide img {
     display: none;
 }
 
+#map_wrapper {
+    border: 1px solid #B1AEA7;
+    padding: 50px;
+    margin-bottom: 50px;
+}
+
+#map_detail {
+    display: flex;
+    flex-direction: row;
+}
+
 
 @media (max-width: 800px) {
 
@@ -762,5 +787,25 @@ swiper-slide img {
 
     #content_2 img {
         margin-top: 10px;
+    }
+
+    #map_wrapper {
+        padding: 16px;
+    }
+
+    .content_sub_title {
+        margin-top: 50px !important;
+    }
+
+    .mobile_margin_bottom {
+        margin-bottom: 30px;
+    }
+
+    #map_detail {
+        flex-direction: column;
+    }
+
+    #map {
+        margin-bottom: 10px;
     }
 }
