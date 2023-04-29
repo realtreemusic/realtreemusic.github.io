@@ -109,7 +109,6 @@ p {
     width: var(--width-content);
     display: flex;
     color: var(--color-darkgray);
-    opacity: 0.9
 }
 
 
@@ -268,6 +267,7 @@ p {
 
 
 header {
+    z-index: 3;
     padding: 20px 0px;
 }
 
@@ -318,6 +318,8 @@ header {
     margin: 0px;
     list-style: none;
     z-index: 8;
+    padding-top: 20px;
+    padding-bottom: 20px;
     background: var(--color-gray);
 }
 
@@ -326,14 +328,15 @@ header {
     padding: 16px 0px;
 }
 
-#menu_small li a {
-    color: white;
+#menu_small li span {
+    color: var(--color-white);
 }
 
 
 /* 메인 컨텐츠 */
 
 #content_main {
+    border-radius: 5px;
     margin: 130px 0px;
     padding: 30px;
     background-color: #FBFAF5;
@@ -344,6 +347,7 @@ header {
 
 /* 컨텐츠2 */
 #content_2 {
+    text-align: center;
     padding: 50px 0px;
     width: var(--width-content);
 }
