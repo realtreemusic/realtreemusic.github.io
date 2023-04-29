@@ -45,13 +45,10 @@
             <div class="location_wrapper">
                 <button class="btn_off" style="margin-bottom: 5px">전국 ></button>
                 <p class="text_small" style="margin-bottom: 30px; letter-spacing: 0.1px;">※ 온라인 레슨, 오고 가는 불편함없이 편하게 집에서</p>
-                <div class="flex_row" style="margin-bottom: 10px;">
-                    <button @click="location='강남';" class="btn_off" :class="{ btn_on: location=='강남' }"
-                        style="margin-right: 30px;">강남 ></button>
-                    <button @click="location='과천';" class="btn_off" :class="{ btn_on: location=='과천' }"
-                        style="margin-right: 30px;">과천 ></button>
-                    <button @click="location='여의도';" class="btn_off" :class="{ btn_on: location=='여의도' }">여의도
-                        ></button>
+                <div class="flex_row" style="margin-bottom: 5px;">
+                    <button @click="location='강남';" class="btn_off" :class="{ btn_on: location=='강남' }">강남 ></button>
+                    <button @click="location='과천';" class="btn_off" :class="{ btn_on: location=='과천' }">과천 ></button>
+                    <button @click="location='여의도';" class="btn_off" :class="{ btn_on: location=='여의도' }">여의도 ></button>
                 </div>
 
                 <div id="map_wrapper">
@@ -81,8 +78,8 @@
 
                         </swiper-container>
 
-                        <div id="map_detail" style="margin-top: 20px;">
-                            <div id="map" style="flex: 1; height: 320px; margin-right: 15px;"></div>
+                        <div id="map_detail" style="margin-top: 15px;">
+                            <div id="map"></div>
 
                             <div class="flex_column" style="flex: 1">
                                 <p class="info_title">주소</p>
