@@ -109,7 +109,7 @@ p {
     width: var(--width-content);
     display: flex;
     color: var(--color-darkgray);
-    opacity: 0.8
+    opacity: 0.9
 }
 
 
@@ -595,13 +595,14 @@ swiper-slide img {
 #realtree-title {
     font-size: 25px !important;
     font-weight: 500;
-    margin-top: 20px;
-    margin-bottom: 15px;
+    margin-top: 60px;
+    margin-bottom: 30px;
 }
 
 #div-realtree p {
     font-size: 15px;
-    line-height: 40px;
+    line-height: 30px;
+    font-weight: 700;
     color: #C6C2B9;
 }
 
