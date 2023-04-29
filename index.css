@@ -528,7 +528,6 @@ hr {
 
 
 .title_location {
-    font-weight: 900;
     font-size: var(--size-font-subtitle);
     align-items: center;
     margin-bottom: 70px;
@@ -539,7 +538,7 @@ hr {
 }
 
 .tab_on {
-    border-bottom: 1px solid #95928B !important
+    border-bottom: 2px solid #e99b0b !important
 }
 
 .tab_off {
@@ -547,6 +546,7 @@ hr {
     height: 50px;
     background-color: transparent;
     padding: 0px 15px;
+    color: #e99b0b;
 }
 
 .curriculum {
@@ -672,6 +672,8 @@ swiper-slide img {
     width: 50%;
     height: 320px;
     margin-right: 15px;
+    border-top: 1px solid #B1AEA7;
+    border-bottom: 1px solid #B1AEA7;
 }
 
 @media (max-width: 800px) {
@@ -839,6 +841,9 @@ swiper-slide img {
         margin-right: 16px;
     }
 
+    .ex_1 {
+        letter-spacing: -1px;
+    }
 
 
 }
