@@ -471,7 +471,7 @@ footer {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
     transition: 0.3s;
     background-color: white;
-    padding: 25px;
+    padding: 20px;
     border-radius: 5px;
     margin-top: 30px;
 }
@@ -748,15 +748,24 @@ swiper-slide img {
     .row_imgs2 {
         align-items: center;
         flex-direction: column;
+        margin-top: 32px;
+        margin-bottom: 0px;
     }
 
     .row_imgs2 div {
         width: calc(100% - 16px);
+        margin-bottom: 15px;
         margin-right: 0px;
     }
 
     .row_imgs2 div img {
         height: 250px;
+    }
+
+
+    #start_box {
+        width: calc(100% - 32px);
+        margin: 16px !important;
     }
 
     .row_divs {
@@ -768,10 +777,6 @@ swiper-slide img {
         padding: 16px;
         border-radius: 5px;
         margin: 0px 0px 16px 0px !important;
-    }
-
-    #start_box {
-        width: calc(100% - 32px);
     }
 
     #btn_kakao {
@@ -834,13 +839,6 @@ swiper-slide img {
         margin-right: 16px;
     }
 
-    .row_imgs2 {
-        margin-bottom: 16px;
-    }
 
-    #start_box {
-        width: calc(100% - 16px);
-        margin: 8px 16px;
-    }
 
 }
