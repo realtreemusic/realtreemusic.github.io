@@ -46,9 +46,9 @@
                 <button class="btn_off" style="margin-bottom: 5px">전국 ></button>
                 <p class="text_small" style="margin-bottom: 30px; letter-spacing: 0.1px;">※ 온라인 레슨, 오고 가는 불편함없이 편하게 집에서</p>
                 <div class="flex_row" style="margin-bottom: 5px;">
-                    <button @click="location='강남';" class="btn_off" :class="{ btn_on: location=='강남' }">강남 ></button>
+                    <!-- <button @click="location='강남';" class="btn_off" :class="{ btn_on: location=='강남' }">강남 ></button> -->
                     <button @click="location='과천';" class="btn_off" :class="{ btn_on: location=='과천' }">과천 ></button>
-                    <button @click="location='여의도';" class="btn_off" :class="{ btn_on: location=='여의도' }">샛강 ></button>
+                    <!-- <button @click="location='여의도';" class="btn_off" :class="{ btn_on: location=='여의도' }">샛강 ></button> -->
                 </div>
 
                 <div id="map_wrapper">
@@ -56,12 +56,12 @@
                         <!-- slides-per-view="3" slides-per-group="3" space-between="15" -->
                         <swiper-container class="mySwiper1" navigation="true" pagination="true"
                             pagination-dynamic-bullets="true">
-                            <swiper-slide v-if="location=='강남'"><img src="/imgs/location/kn/1.png"></swiper-slide>
+                            <!-- <swiper-slide v-if="location=='강남'"><img src="/imgs/location/kn/1.png"></swiper-slide> -->
                             <!-- <swiper-slide v-if="location=='강남'"><img src="/imgs/location/kn/2.jpg"></swiper-slide> -->
-                            <swiper-slide v-if="location=='강남'"><img src="/imgs/location/kn/3.jpg"></swiper-slide>
+                            <!-- <swiper-slide v-if="location=='강남'"><img src="/imgs/location/kn/3.jpg"></swiper-slide>
                             <swiper-slide v-if="location=='강남'"><img src="/imgs/location/kn/4.jpg"></swiper-slide>
                             <swiper-slide v-if="location=='강남'"><img src="/imgs/location/kn/5.jpg"></swiper-slide>
-                            <swiper-slide v-if="location=='강남'"><img src="/imgs/location/kn/6.jpg"></swiper-slide>
+                            <swiper-slide v-if="location=='강남'"><img src="/imgs/location/kn/6.jpg"></swiper-slide> -->
 
                             <swiper-slide v-if="location=='과천'"><img src="/imgs/location/kc/1.jpg"></swiper-slide>
                             <swiper-slide v-if="location=='과천'"><img src="/imgs/location/kc/2.jpg"></swiper-slide>
@@ -73,8 +73,8 @@
                             <swiper-slide v-if="location=='과천'"><img src="/imgs/location/kc/8.jpg"></swiper-slide>
                             <swiper-slide v-if="location=='과천'"><img src="/imgs/location/kc/9.jpg"></swiper-slide>
 
-                            <swiper-slide v-if="location=='여의도'"><img src="/imgs/location/yyd/1.jpg"></swiper-slide>
-                            <swiper-slide v-if="location=='여의도'"><img src="/imgs/location/yyd/2.jpg"></swiper-slide>
+                            <!-- <swiper-slide v-if="location=='여의도'"><img src="/imgs/location/yyd/1.jpg"></swiper-slide>
+                            <swiper-slide v-if="location=='여의도'"><img src="/imgs/location/yyd/2.jpg"></swiper-slide> -->
 
                         </swiper-container>
 
@@ -85,18 +85,16 @@
                                 <p class="info_title">주소</p>
                                 <p class="info_content">{{ address }}</p>
                                 <p class="info_title">연락처</p>
-                                <p class="info_content">연락처</p>
+                                <p class="info_content">{{ phone }}</p>
                                 <p class="info_title">카카오톡 ID</p>
-                                <p class="info_content">오픈시간</p>
+                                <p class="info_content">{{ kakao }}</p>
                                 <p class="info_title">레슨</p>
-                                <p class="info_content">주소</p>
+                                <p class="info_content">{{ lesson }}</p>
                                 <p class="info_title">서비스</p>
-                                <p class="info_content">주소</p>
+                                <p class="info_content">{{ service }}</p>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
 
 
@@ -133,8 +131,12 @@
             }
         },
         data: {
-            location: "강남",
-            address: "서울 서초구 사임당로 181 2층 201호",
+            location: "과천",
+            address: "경기 과천시 관문로 92 101동 3층 323호",
+            phone: "0507-1369-4275",
+            kakao: "-",
+            lesson: "24시간 운영",
+            service: "주차, 예약, 무선 인터넷, 남녀 화장실 구분"
         },
         created: function () {
         },
@@ -144,9 +146,9 @@
     var kcLocation = new naver.maps.LatLng(37.4297542, 126.9904025);
     var yydLocation = new naver.maps.LatLng(37.5198747, 126.9320775);
 
-    var map = new naver.maps.Map('map', { center: knLocation, zoom: 15 });
+    var map = new naver.maps.Map('map', { center: kcLocation, zoom: 15 });
     var marker = new naver.maps.Marker({
-        position: knLocation,
+        position: kcLocation,
         title: '위치',
         map: map
     });
