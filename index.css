@@ -157,7 +157,7 @@ p {
 
 .btn_lightyellow {
     border-radius: 5px;
-    background-color: var(--color-btn-lightyellow);
+    background-color: var(--color-btn-yellow);
     border: none;
     height: var(--height-btn);
     width: 150px;
@@ -625,7 +625,8 @@ swiper-slide img {
     font-size: 15px;
     line-height: 30px;
     font-weight: 700;
-    color: #C6C2B9;
+    letter-spacing: -0.5px;
+    color: #928f87;
 }
 
 #text_lody {
